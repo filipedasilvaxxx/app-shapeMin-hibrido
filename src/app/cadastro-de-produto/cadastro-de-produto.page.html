@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastrdo De Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <img src="{{imagem}}">
+
+    <ion-item>
+        <input type="file" (change)="enviaArquivo($event)"/>
+    </ion-item>
+    
+ <form [formGroup]="formGroup">
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input formControlName="nome" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Marca</ion-label>
+        <ion-input formControlName="marca" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Informação</ion-label>
+        <ion-input formControlName="Informação" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Codigo</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" (click)="cadastrar()">Cadastrar Produto</ion-button>
+  </form>
+  
+</ion-content>
