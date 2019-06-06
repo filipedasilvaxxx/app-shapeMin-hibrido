@@ -41,10 +41,7 @@ export class CadastroDeProdutoPage implements OnInit {
     })
   }
 
-  ionViewDidLoad() {
-    this.downloadFoto();
-  }
-
+  
   ngOnInit() {
   }
 

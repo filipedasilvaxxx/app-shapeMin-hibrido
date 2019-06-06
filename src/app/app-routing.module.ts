@@ -1,28 +1,39 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './servico/auth.Guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'list',
     pathMatch: 'full'
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './home/home.module#HomePageModule',
+     
+
   },
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
+  
   { path: 'cadastro-de-loja', 
-  loadChildren: './cadastro-de-loja/cadastro-de-loja.module#CadastroDeLojaPageModule' },
+  loadChildren: './cadastro-de-loja/cadastro-de-loja.module#CadastroDeLojaPageModule',
+  canActivate: [AuthGuard] 
+  },
   
   { path: 'cadastro-de-produto', 
   loadChildren: './cadastro-de-produto/cadastro-de-produto.module#CadastroDeProdutoPageModule' },
   
   { path: 'loja-perfil', 
-  loadChildren: './loja-perfil/loja-perfil.module#LojaPerfilPageModule' }
+  loadChildren: './loja-perfil/loja-perfil.module#LojaPerfilPageModule' },
+  
+  { path: 'logoff', 
+  loadChildren: './logoff/logoff.module#LogoffPageModule',
+ }
+
 ];
 
 @NgModule({

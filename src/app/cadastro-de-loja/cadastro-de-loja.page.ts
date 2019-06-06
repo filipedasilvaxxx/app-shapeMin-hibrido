@@ -45,12 +45,15 @@ export class CadastroDeLojaPage implements OnInit {
         this.router.navigate(['/loja-perfil']);
         this.loadingController.dismiss();
         this.toast('Cadastrado com sucesso');
-      }).catch(()=>{
-        console.log(ref);
+      }).catch(err=>{
+        console.log(err);
+        console.log("erro");
+
         this.loadingController.dismiss();
         this.toast('Erro ao cadastrar');
       })      
   }
+  
 
  
   async loading() {

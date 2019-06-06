@@ -1,46 +1,73 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    
-    <ion-img style="width: 60px; height: 60px;" src="../assets/1.png"></ion-img> 
-
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
+    <ion-toolbar >
+      <ion-img class="topo" style="width: 60px; height: 60px; right: 50px " src="../assets/1.png"></ion-img>
+    </ion-toolbar>
+  </ion-header>
   
-  <ion-slides pager="true" style="width: 200px; height: 200px;" [options]="slideOpts">
-    <ion-slide>
-      <ion-img src="../assets/2.png"></ion-img>
-    </ion-slide>
-    <ion-slide>
-      <ion-img src="../assets/3.png"></ion-img>
-    </ion-slide>
-    <ion-slide>
-      <ion-img src="../assets/4.png"></ion-img>
-    </ion-slide>
-  </ion-slides>
-
-  <ion-searchbar></ion-searchbar>
-
-  <ion-row>
-    <ion-col>
-      <ion-card>
-        <h1 orange>27</h1>
-        <p>A homolar</p>
-      </ion-card>
-    </ion-col>
-    <ion-col>
-      <ion-card>
-        <h1 orange>27</h1>
-        <p>A homolar</p>
-      </ion-card>
-    </ion-col>
+  <ion-content>
+  
+  
+    <ion-slides pager="true" autoplay="true" style="width: 200px; height: 200px;"  [options]="slideOpts">
+      <ion-slide>
+        <ion-img src="../assets/2.png"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../assets/3.png"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../assets/4.png"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  
+    <ion-searchbar></ion-searchbar>
+  
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-img style="width: 150px; height: 150px;" src="../assets/5.jpg"></ion-img>
+          <ion-button size="small">Whey Protein</ion-button>
+        </ion-card>
+      </ion-col>
+  
+      <ion-col>
+        <ion-card>
+          <ion-img style="width: 150px; height: 150px;" src="../assets/6.png"></ion-img>
+          <ion-button size="small"> BCAA </ion-button>
+        </ion-card>
+      </ion-col>
     </ion-row>
-
+  
+    <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-img style="width: 150px; height: 150px;" src="../assets/7.png"></ion-img>
+            <ion-button size="small"> Creatine </ion-button>
+          </ion-card>
+        </ion-col>
     
-
-
-</ion-content>
+        <ion-col>
+          <ion-card>
+            <ion-img style="width: 150px; height: 150px;" src="../assets/8.jpg"></ion-img>
+            <ion-button size="small"> tribulus </ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+        
+    <ion-fab vertical="bottom" horizontal="start">
+      <ion-fab-button><ion-icon name="aperture"></ion-icon></ion-fab-button>
+    
+      <ion-fab-list side="top">
+        <ion-fab-button href="https://pt-br.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+        <ion-fab-button href="https://www.instagram.com/?hl=pt-br"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+        <ion-fab-button href="https://twitter.com/login?lang=pt"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+        <ion-fab-button href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    
+  
+    
+    </ion-fab>
+    
+  
+  
+  </ion-content>

@@ -5,5 +5,11 @@
 </ion-header>
 
 <ion-content>
+    <img src="{{imagem}}">
 
+    <ion-item>
+        <input type="file" (change)="enviaArquivo($event)"/>
+    </ion-item>
+    
+ <p (click)="cadastro-de-produto">Cadastre seus Produtos</p>
 </ion-content>

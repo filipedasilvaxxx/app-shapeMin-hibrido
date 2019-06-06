@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    IonicStorageModule.forRoot()
+
 
   ],
   providers: [

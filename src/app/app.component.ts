@@ -18,6 +18,17 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
+    {
+      title: 'Cadastre sua Loja',
+      url: '/cadastro-de-loja',
+      icon: 'home'
+    },
+    {
+      title: 'Logoff',
+      url: '/logoff',
+      icon: 'home'
+    },
+  
   
   ];
 
@@ -37,6 +48,22 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-
+    
+    this.firebaseauth.authState
+    .subscribe(
+      user => {
+        if (user) {
+          this.router.navigate(['/cadastro-de-loja']);
+          } else {
+            this.router.navigate(['/list']);
+          }
+      },
+      () => {
+        this.router.navigate(['/cadastro-de-loja']);
+      }
+    );
   }
+    
+  
+  
 }

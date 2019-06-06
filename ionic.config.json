@@ -1,5 +1,7 @@
 {
   "name": "shapemin",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
