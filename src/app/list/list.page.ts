@@ -33,7 +33,6 @@ export class ListPage {
         c.setDados(doc.data());
         console.log(c.nome)
         console.log('Logado com sucesso');
-
         this.router.navigate(['/home-cliente', { loja: c.nome} ]);
       }).catch((error) => {
         console.log("Error getting document:", error);
