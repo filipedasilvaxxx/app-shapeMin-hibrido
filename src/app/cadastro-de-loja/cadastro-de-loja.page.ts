@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 import * as firebase from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Loja } from '../model/loja';
 
 @Component({
   selector: 'app-cadastro-de-loja',
@@ -11,6 +13,9 @@ import * as firebase from 'firebase';
   styleUrls: ['./cadastro-de-loja.page.scss'],
 })
 export class CadastroDeLojaPage implements OnInit {
+  @ViewChild('email') email;
+  @ViewChild('senha') senha;
+
 
   formGroup : FormGroup;
 
@@ -18,10 +23,11 @@ export class CadastroDeLojaPage implements OnInit {
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
 
-  constructor(public formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
               public router: Router,
               public loadingController: LoadingController,
-              public toastController: ToastController) {
+              public toastController: ToastController,
+              public fire: AngularFireAuth) {
     
     this.formGroup = this.formBuilder.group({
       nome : [''],
@@ -36,8 +42,8 @@ export class CadastroDeLojaPage implements OnInit {
   }
 
   cadastrar(){
+    this.cadastrarLogin();
     this.loading();
-
     let ref = this.firestore.collection('loja')
     ref.add(this.formGroup.value)
       .then(() =>{
@@ -45,13 +51,32 @@ export class CadastroDeLojaPage implements OnInit {
         this.router.navigate(['/loja-perfil']);
         this.loadingController.dismiss();
         this.toast('Cadastrado com sucesso');
-      }).catch(err=>{
+      }).catch((err)=>{
         console.log(err);
-        console.log("erro");
-
         this.loadingController.dismiss();
         this.toast('Erro ao cadastrar');
       })      
+  }
+
+  logar(){
+    this.fire.auth.signInWithEmailAndPassword(this.email.value,this.senha.value)
+      .then(()=>{
+        console.log('Logado com sucesso');
+      })
+      .catch(()=>{
+        console.log('Login Inválido');
+      })
+  }
+
+  cadastrarLogin(){
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
+    .then(()=> {
+      this.logar();
+      console.log("Cadastrado com sucesso!");
+    }).catch(()=>{
+      console.log("Usuário inválido");
+    })
+
   }
   
 

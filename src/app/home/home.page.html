@@ -1,8 +1,11 @@
-<ion-header>
+<ion-header >
     <ion-toolbar >
       <ion-img class="topo" style="width: 60px; height: 60px; right: 50px " src="../assets/1.png"></ion-img>
     </ion-toolbar>
-  </ion-header>
+    <ion-input (click)="cadastrarLoja()">Cadastre sua loja</ion-input>
+    <ion-input (click)="logar()">Entrar</ion-input>
+    <ion-input *ngFor="let loja of listaPerfil">{{loja?.nome}}</ion-input>
+</ion-header>
   
   <ion-content>
   

@@ -5,7 +5,7 @@ import { AuthGuard } from './servico/auth.Guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
   
   { path: 'cadastro-de-loja', 
   loadChildren: './cadastro-de-loja/cadastro-de-loja.module#CadastroDeLojaPageModule',
-  canActivate: [AuthGuard] 
+  
   },
   
   { path: 'cadastro-de-produto', 
@@ -32,7 +32,9 @@ const routes: Routes = [
   
   { path: 'logoff', 
   loadChildren: './logoff/logoff.module#LogoffPageModule',
- }
+  canActivate: [AuthGuard]
+ },  { path: 'home-cliente', loadChildren: './home-cliente/home-cliente.module#HomeClientePageModule' }
+
 
 ];
 

@@ -4,5 +4,5 @@ export const firebaseConfig = {
     databaseURL: "https://shape-min.firebaseio.com",
     projectId: "shape-min",
     storageBucket: "shape-min.appspot.com",
-    messagingSenderId: "14292563508",
+    messagingSenderId: "14292563508"
 };

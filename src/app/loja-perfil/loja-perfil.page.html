@@ -1,15 +1,27 @@
-<ion-header>
+<ion-header *ngFor="let loja of listaLoja">
   <ion-toolbar>
-    <ion-title>LojaPerfil</ion-title>
+    <ion-title>{{loja.nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <img src="{{imagem}}">
+  <h1 *ngFor="let loja of listaLoja">{{loja.nome}}</h1>
+    
+  <img src="{{imagem}}">
 
     <ion-item>
         <input type="file" (change)="enviaArquivo($event)"/>
     </ion-item>
     
  <p (click)="cadastro-de-produto">Cadastre seus Produtos</p>
+
+ <ion-row *ngFor="let produto of listaDeProdutos">
+  <ion-col>
+    <ion-card>
+      <h1 orange>27</h1>
+      <p>A homolar</p>
+    </ion-card>
+  </ion-col>
+</ion-row>
+
 </ion-content>

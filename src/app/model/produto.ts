@@ -6,6 +6,8 @@ export class Produto {
     informacao: string;
     codigo: string;
     endereco: string;
+    img : string;
+
 
 
     constructor() {

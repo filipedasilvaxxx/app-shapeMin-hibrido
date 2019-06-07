@@ -48,22 +48,21 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    
+
     this.firebaseauth.authState
-    .subscribe(
-      user => {
-        if (user) {
-          this.router.navigate(['/cadastro-de-loja']);
-          } else {
-            this.router.navigate(['/list']);
-          }
-      },
-      () => {
-        this.router.navigate(['/cadastro-de-loja']);
-      }
-    );
-  }
+      .subscribe(
+        user => {
+          if (user) {
+            this.router.navigate(['/home-cliente', { user: user.email} ]);
+
+            } else {
+              this.router.navigate(['home']);
+            }
+        },
+        () => {
+          this.router.navigate(['/home-cliente']);
+        }
+      );
+  }  
     
-  
-  
 }

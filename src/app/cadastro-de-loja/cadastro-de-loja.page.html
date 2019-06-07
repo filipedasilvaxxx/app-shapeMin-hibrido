@@ -19,11 +19,6 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>E-mail</ion-label>
-        <ion-input formControlName="email" type="text"></ion-input>
-      </ion-item>
-
-      <ion-item>
         <ion-label floating>CNPJ</ion-label>
         <ion-input formControlName="cnpj" type="text"></ion-input>
       </ion-item>
@@ -32,6 +27,17 @@
         <ion-label floating>Endereço</ion-label>
         <ion-input formControlName="endereco" type="text"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input #email formControlName="email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" #senha></ion-input>
+        </ion-item>
+    
     
     </ion-list>
     

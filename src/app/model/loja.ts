@@ -6,6 +6,8 @@ export class Loja {
     email: string;
     cnpj: string;
     endereco: string;
+    img : string;
+
 
 
     constructor() {
