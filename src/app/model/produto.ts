@@ -5,7 +5,7 @@ export class Produto {
     marca: string;
     informacao: string;
     codigo: string;
-    endereco: string;
+    categoria: string;
     img : string;
 
 
@@ -19,6 +19,7 @@ export class Produto {
         this.marca = obj.marca;
         this.informacao = obj.informacao;
         this.codigo = obj.codigo;
+        this.categoria =  obj.categoria;
         
     }
 }

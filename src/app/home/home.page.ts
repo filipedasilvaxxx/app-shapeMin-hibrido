@@ -40,6 +40,19 @@ export class HomePage {
   this.router.navigate(['/cadastro-de-loja']);
   }
   
+  bcaa(){
+    this.router.navigate(['/bcaa']);
+    }
+  whey(){
+    this.router.navigate(['/whey-list']);
+  }
+  creatina(){
+    this.router.navigate(['/creatina-list']);
+  }
+  tribulus(){
+    this.router.navigate(['/tribulus-list']);
+  }
+
   logar(){
     this.router.navigate(['/list']);
     }

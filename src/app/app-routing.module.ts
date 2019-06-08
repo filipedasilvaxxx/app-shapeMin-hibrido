@@ -33,7 +33,16 @@ const routes: Routes = [
   { path: 'logoff', 
   loadChildren: './logoff/logoff.module#LogoffPageModule',
   canActivate: [AuthGuard]
- },  { path: 'home-cliente', loadChildren: './home-cliente/home-cliente.module#HomeClientePageModule' }
+ },
+  { path: 'home-cliente', loadChildren: './home-cliente/home-cliente.module#HomeClientePageModule' },
+  
+  { path: 'whey-list', loadChildren: './whey-list/whey-list.module#WheyListPageModule' },
+  
+  { path: 'creatine-list', loadChildren: './creatine-list/creatine-list.module#CreatineListPageModule' },
+  
+  { path: 'tribulus-list', loadChildren: './tribulus-list/tribulus-list.module#TribulusListPageModule' },
+  
+  { path: 'bcaa-list', loadChildren: './bcaa-list/bcaa-list.module#BcaaListPageModule' }
 
 
 ];

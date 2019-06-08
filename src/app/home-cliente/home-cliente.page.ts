@@ -16,15 +16,15 @@ export class HomeClientePage implements OnInit {
   settings = { timestampsInSnapshots: true };
   
   loja: Loja = new Loja();
+  email : string;
   nome : string;
-
   listaPerfil : Loja[] = []; 
 
     constructor(public router : Router,
                 private menu: MenuController,
                 private firebaseauth : AngularFireAuth,
                 public activatedRoute: ActivatedRoute, ){
-      this.nome = this.activatedRoute.snapshot.paramMap.get('loja');
+      this.email = this.activatedRoute.snapshot.paramMap.get('loja');
       
     }
 
@@ -35,7 +35,7 @@ export class HomeClientePage implements OnInit {
     
     obterCliente() {
       console.log(this.nome)
-      var ref = firebase.firestore().collection("loja").doc(this.nome);
+      var ref = firebase.firestore().collection("loja").doc(this.email);
       ref.get().then(doc => {
       this.loja.setDados(doc.data());
         

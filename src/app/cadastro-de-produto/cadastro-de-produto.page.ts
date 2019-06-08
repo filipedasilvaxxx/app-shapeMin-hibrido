@@ -27,17 +27,18 @@ export class CadastroDeProdutoPage implements OnInit {
     public router: Router,
     public loadingController: LoadingController,
     public toastController: ToastController,
-    public navParams: NavParams,
-    public navCtrl: NavController,) {
+   
+    public navCtrl: NavController) {
 
       this.firestore.settings(this.settings);
 
     this.formGroup = this.formBuilder.group({
       nome: [''],
-      telefone: [''],
-      email: [''],
-      cnpj: [''],
-      endereco: [''],
+      marca: [''],
+      informacao: [''],
+      codigo: [''],
+      categoria: [''],
+      
     })
   }
 
@@ -54,11 +55,11 @@ export class CadastroDeProdutoPage implements OnInit {
         console.log('Cadastrado com sucesso');
         this.router.navigate(['/loja-perfil']);
         this.loadingController.dismiss();
-        this.toast('Cadastrado com sucesso');
+        
       }).catch(() => {
         console.log('Erro ao cadastrar');
         this.loadingController.dismiss();
-        this.toast('Erro ao cadastrar');
+       
       })
   }
 
@@ -93,13 +94,6 @@ export class CadastroDeProdutoPage implements OnInit {
     await loading.present();
   }
 
-  async toast(msg: string) {
-    const toast = await this.toastController.create({
-      message: 'Cadastrado com sucesso!',
-      duration: 2000
-    });
-    toast.present();
-
-  }
+  
 
 }

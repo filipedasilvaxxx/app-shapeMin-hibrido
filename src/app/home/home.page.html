@@ -2,8 +2,11 @@
     <ion-toolbar >
       <ion-img class="topo" style="width: 60px; height: 60px; right: 50px " src="../assets/1.png"></ion-img>
     </ion-toolbar>
-    <ion-input (click)="cadastrarLoja()">Cadastre sua loja</ion-input>
-    <ion-input (click)="logar()">Entrar</ion-input>
+    <ion-item>
+      <ion-textarea  (click)="cadastrarLoja()" placeholder="Cadastre sua loja"></ion-textarea >
+      <ion-textarea (click)="logar()"  clearOnEdit="true"placeholder="Entrar"></ion-textarea>
+    </ion-item>
+    
     <ion-input *ngFor="let loja of listaPerfil">{{loja?.nome}}</ion-input>
 </ion-header>
   
@@ -28,14 +31,14 @@
       <ion-col>
         <ion-card>
           <ion-img style="width: 150px; height: 150px;" src="../assets/5.jpg"></ion-img>
-          <ion-button size="small">Whey Protein</ion-button>
+          <ion-button size="small" (click)="whey()">Whey Protein</ion-button>
         </ion-card>
       </ion-col>
   
       <ion-col>
         <ion-card>
           <ion-img style="width: 150px; height: 150px;" src="../assets/6.png"></ion-img>
-          <ion-button size="small"> BCAA </ion-button>
+          <ion-button size="small" (click)="bcaa()"> BCAA </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -44,14 +47,14 @@
         <ion-col>
           <ion-card>
             <ion-img style="width: 150px; height: 150px;" src="../assets/7.png"></ion-img>
-            <ion-button size="small"> Creatine </ion-button>
+            <ion-button size="small" (click)="creatina()"> Creatine </ion-button>
           </ion-card>
         </ion-col>
     
         <ion-col>
           <ion-card>
             <ion-img style="width: 150px; height: 150px;" src="../assets/8.jpg"></ion-img>
-            <ion-button size="small"> tribulus </ion-button>
+            <ion-button size="small" (click)="tribulus()"> tribulus </ion-button>
           </ion-card>
         </ion-col>
       </ion-row>

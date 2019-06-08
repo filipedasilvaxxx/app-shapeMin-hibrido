@@ -28,6 +28,11 @@ export class AppComponent {
       url: '/logoff',
       icon: 'home'
     },
+    {
+      title: 'Bcaa',
+      url: '/bcaa-list',
+      icon: 'home'
+    },
   
   
   ];
@@ -56,7 +61,7 @@ export class AppComponent {
             this.router.navigate(['/home-cliente', { user: user.email} ]);
 
             } else {
-              this.router.navigate(['home']);
+              this.router.navigate(['']);
             }
         },
         () => {
