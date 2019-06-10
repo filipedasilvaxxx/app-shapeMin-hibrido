@@ -3,6 +3,9 @@ import { Produto } from '../model/produto';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Pedido } from '../model/pedido';
+import { Item } from '../model/item';
+import { StorageService } from '../servico/storage.service';
 
 @Component({
   selector: 'app-bcaa-list',
@@ -17,9 +20,12 @@ export class BcaaListPage implements OnInit {
 
   categoria : string;
 
+  pedido : Pedido;
+
   constructor(public router : Router,
               public loadingController: LoadingController,
-              public toastController: ToastController){
+              public toastController: ToastController,
+              public storageServ : StorageService){
     
   }
   ngOnInit() {
@@ -50,4 +56,31 @@ export class BcaaListPage implements OnInit {
     });
     await loading.present();
   }
+
+  addCarrinho(produto : Produto){
+    this.pedido = this.storageServ.getCart();
+
+    let add = true;
+
+    let i = new Item();
+    i.produto = produto;
+    i.quantidade = 1;
+
+    if(this.pedido==null){ // caso pedido esteja vazio
+      this.pedido = new Pedido(); // cria um novo pedido
+      this.pedido.itens = []; // cria a lista de itens
+    }
+
+    this.pedido.itens.forEach(p => {
+       if(p.produto.id = produto.id){
+         add = false;
+       }
+    });
+
+    if(add=true) this.pedido.itens.push(i);
+    this.storageServ.setCart(this.pedido);
+      
+  }
+
+  
 }
