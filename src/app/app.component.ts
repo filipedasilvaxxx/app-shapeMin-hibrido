@@ -33,6 +33,7 @@ export class AppComponent {
       url: '/bcaa-list',
       icon: 'home'
     },
+    
   
   
   ];

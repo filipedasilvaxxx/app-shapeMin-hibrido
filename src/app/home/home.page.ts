@@ -32,8 +32,6 @@ export class HomePage {
   ngOnInit() {
       
     }
-
-    
    
 
   cadastrarLoja(){
@@ -63,6 +61,11 @@ export class HomePage {
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
+  }
+
+  CalculeSuaIMC(){
+    this.router.navigate(['/imc']);
+
   }
   
   
